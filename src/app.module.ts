@@ -10,7 +10,7 @@ function validateConfig(config: Record<string, unknown>) {
 	if (!config.SERVER_PORT || config.SERVER_PORT === 0) {
 		throw new Error('Invalid Server Port in configuration');
 	}
-	if (!config.RABBIT_URL || !config.RABBIT_QUEUE1) {
+	if (!config.RABBIT_URL || !config.RABBIT_QUEUE1 || !config.RABBIT_QUEUE2) {
 		throw new Error('Invalid Rabbit in configuration');
 	}
 

@@ -5,7 +5,9 @@ import { Repository } from './DTO/repository.interface';
 
 @Injectable()
 export class MongoService<T extends Document> implements Repository<T> {
-  constructor(@InjectModel('PersonData') private readonly model: Model<T>) {}
+  constructor(
+	@InjectModel('PersonData') private readonly model: Model<T>
+) {}
 
   async create(item: Partial<T>): Promise<T> {
     return this.model.create(item);

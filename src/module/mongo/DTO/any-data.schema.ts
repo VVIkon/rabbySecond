@@ -2,7 +2,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class Person {
+@Schema()
+export class PersonData extends Document {
 	@ApiProperty()
 	@Prop()
 	lastName: string;
@@ -226,21 +227,6 @@ export class Person {
 	@ApiProperty()
 	@Prop()
 	carPTSDate: string;
-}
-
-@Schema()
-export class PersonData extends Document {
-  @Prop({ required: true })
-  name: string;
-
-  @Prop()
-  description?: string;
-
-  @Prop({ type: Person })
-  data: {
-    person: Person;
-    metadata?: any;
-  };
 }
 
 export const PersonDataSchema = SchemaFactory.createForClass(PersonData);

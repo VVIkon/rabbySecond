@@ -1,7 +1,6 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import * as amqp from 'amqplib';
 import { ConfigService } from '@nestjs/config';
-// import { ITaskMessage } from '../person/interfaces/IPerson';
 
 @Injectable()
 export class ConsumerService implements OnModuleInit, OnModuleDestroy {
